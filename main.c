@@ -9,7 +9,7 @@ void main()
     GPIO = 0b0000;          
 
     //*** Main loop
-    enum {GREEN, BLUE, RED, WHIGHT, YELLOW, LB, MAGENTA, BLACK} state;
+    enum {GREEN, BLUE, RED, WHIGHT, YELLOW, LB, MAGENTA, MULT, BLACK} state;
      state = GREEN;              // initial state is green, so
     G_LED = 1; 
      for (;;)
@@ -55,10 +55,19 @@ void main()
                 B_LED = 1;              //  turn on green LED
                 break;
             case MAGENTA:                   // if red:
-                state = BLACK;          //  next state = green
+                state = MULT;          //  next state = green
                 //G_LED = 1;
                 R_LED = 1;    
                 B_LED = 1;              //  turn on green LED
+                break;
+            case MULT:                   // if red:
+                state = BLACK;          //  next state = green
+                //G_LED = 1;
+                enum {GREEN, BLUE, RED, WHIGHT, YELLOW, LB, MAGENTA} state_temp;
+                for(;;){
+                    
+                break;    
+                }             //  turn on green LED
                 break;
             case BLACK:                   // if red:
                 state = GREEN;          //  next state = green

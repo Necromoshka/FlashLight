@@ -26,5 +26,7 @@
 #define G_TIME  12              // time (seconds) each colour is turned on for
 #define B_TIME   3
 #define R_TIME  10
+#define FLASH_TIME 1000
+#define FRAME_TIME 33
 
 #endif
